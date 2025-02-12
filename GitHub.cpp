@@ -37,10 +37,9 @@ struct Filmi {
 Filmi gjejFilminMeTeMire(Filmi filma[], int madhesia) {
     Filmi meIMDBteLarte = filma[0];
     for (int i = 1; i < madhesia; i++) {
-        if (filma[i].viti_i_relizimit > meIMDBteLarte.viti_i_relizimit ||
-            (filma[i].viti_i_relizimit == meIMDBteLarte.viti_i_relizimit && filma[i].imdb > meIMDBteLarte.imdb)) {
-            meIMDBteLarte = filma[i];
-        }
+       if (filma[i].imdb > meIMDBteLarte.imdb ||
+    (filma[i].imdb == meIMDBteLarte.imdb && filma[i].viti_i_relizimit > meIMDBteLarte.viti_i_relizimit)) {
+
     }
     return meIMDBteLarte;
 }
