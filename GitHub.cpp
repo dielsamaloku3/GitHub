@@ -93,6 +93,14 @@ int main() {
 
     // Shfaqja e rezultatit
     shfaqRezultatin(filmiMeIMDB);
+    
+    // Testimi i funksioneve
+    Zhanri z = KOMEDI;
+    cout << "Zhanri: " << zhanriNeString(z) << endl;
+    cout << "Pershkrimi: " << pershkrimiZhanrit(z) << endl;
+    
+    cout << "\nLista e zhanreve:" << endl;
+    shfaqZhanret();
 
     return 0;
 }
