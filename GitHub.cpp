@@ -22,6 +22,7 @@ string zhanriNeString(Zhanri zhanri) {
     default: return "I Panjohur";
     }
 }
+
 // Funksioni per te marre pershkrimin e nje zhanri
 string pershkrimiZhanrit(Zhanri zhanri) {
     switch (zhanri) {
@@ -38,7 +39,8 @@ string pershkrimiZhanrit(Zhanri zhanri) {
 void shfaqZhanret() {
     cout << "Zhanret e disponueshme:" << endl;
     for (int i = AKSION; i <= SCI_FI; i++) {
-        cout << "- " << zhanriNeString(static_cast<Zhanri>(i)) << endl;
+        Zhanri zhanri = static_cast<Zhanri>(i); `
+        cout << "- " << zhanriNeString(zhanri) << endl;
     }
 }
 
@@ -56,9 +58,10 @@ struct Filmi {
 Filmi gjejFilminMeTeMire(Filmi filma[], int madhesia) {
     Filmi meIMDBteLarte = filma[0];
     for (int i = 1; i < madhesia; i++) {
-       if (filma[i].imdb > meIMDBteLarte.imdb ||
-    (filma[i].imdb == meIMDBteLarte.imdb && filma[i].viti_i_relizimit > meIMDBteLarte.viti_i_relizimit)) {
-
+        if (filma[i].imdb > meIMDBteLarte.imdb ||
+           (filma[i].imdb == meIMDBteLarte.imdb && filma[i].viti_i_relizimit > meIMDBteLarte.viti_i_relizimit)) {
+            meIMDBteLarte = filma[i];  
+        }
     }
     return meIMDBteLarte;
 }
@@ -69,12 +72,18 @@ void shfaqRezultatin(Filmi filmi) {
     cout << "Titulli: " << filmi.titulli << endl;
     cout << "Zhanri: " << zhanriNeString(filmi.zhanri) << endl;
     cout << "Aktoret: ";
+    
+    bool first = true;
     for (string aktor : filmi.aktoret) {
         if (!aktor.empty()) {
-            cout << aktor << ", ";
+            if (!first) cout << ", "; 
+            cout << aktor;
+            first = false;
         }
     }
-    cout << "\nViti i Relizimit: " << filmi.viti_i_relizimit << endl;
+
+    cout << endl;
+    cout << "Viti i Relizimit: " << filmi.viti_i_relizimit << endl;
     cout << "Pershkrimi: " << filmi.pershkrimi << endl;
     cout << "IMDb: " << filmi.imdb << endl;
 }
@@ -96,6 +105,7 @@ int main() {
     
     // Testimi i funksioneve
     Zhanri z = KOMEDI;
+    cout << "\nTestim i funksioneve ndihmëse:" << endl;
     cout << "Zhanri: " << zhanriNeString(z) << endl;
     cout << "Pershkrimi: " << pershkrimiZhanrit(z) << endl;
     
