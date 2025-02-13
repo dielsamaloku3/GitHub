@@ -16,6 +16,10 @@ Enumerimi Zhanri - Përmban llojet e ndryshme të zhanreve si AKSION, KOMEDI, DR
 
 **Funksioni **main - Krijon tre filma dhe thërret funksionet përkatëse për të gjetur dhe shfaqur filmin më të mirë.
 
+**Funksioni pershkrimiZhanrit(Zhanri zhanri) – Kthen një përshkrim tekstual për secilin zhanër filmi.
+
+**Funksioni shfaqZhanret() – Shfaq në ekran të gjithë zhanret e disponueshme.
+
 Ndryshime të Bëra në Branch-in GjejFiliminMeTeMire
 
 Në këtë branch, është optimizuar funksioni gjejFilminMeTeMire për të siguruar që filmi i përzgjedhur të ketë IMDb më të lartë në rastin kur ka disa filma me të njëjtin vit të realizimit. Kjo përmirëson saktësinë e zgjedhjes së filmit më të mirë.
