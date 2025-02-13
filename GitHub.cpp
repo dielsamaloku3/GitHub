@@ -22,6 +22,25 @@ string zhanriNeString(Zhanri zhanri) {
     default: return "I Panjohur";
     }
 }
+// Funksioni per te marre pershkrimin e nje zhanri
+string pershkrimiZhanrit(Zhanri zhanri) {
+    switch (zhanri) {
+    case AKSION: return "Filma me skena te shpejta dhe te mbushura me adrenaline.";
+    case KOMEDI: return "Filma qesharake per argetim dhe humor.";
+    case DRAME: return "Filma me histori serioze dhe emocionale.";
+    case HORROR: return "Filma te frikshem qe synojne te krijojne tension.";
+    case SCI_FI: return "Filma fantastiko-shkencore me elemente imagjinare.";
+    default: return "Nuk ka pershkrim te disponueshem.";
+    }
+}
+
+// Funksioni per te shfaqur te gjithe zhanret e mundshme
+void shfaqZhanret() {
+    cout << "Zhanret e disponueshme:" << endl;
+    for (int i = AKSION; i <= SCI_FI; i++) {
+        cout << "- " << zhanriNeString(static_cast<Zhanri>(i)) << endl;
+    }
+}
 
 // Struktura Filmi
 struct Filmi {
